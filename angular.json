@@ -1,7 +1,127 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "./",
   "projects": {
-  }
+    "catalogo-leite": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "catalogo-leite",
+      "sourceRoot": "catalogo-leite/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/catalogo-leite",
+            "index": "catalogo-leite/src/index.html",
+            "main": "catalogo-leite/src/main.ts",
+            "polyfills": "catalogo-leite/src/polyfills.ts",
+            "tsConfig": "catalogo-leite/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "catalogo-leite/src/favicon.ico",
+              "catalogo-leite/src/assets"
+            ],
+            "styles": [
+              "catalogo-leite/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "catalogo-leite/src/environments/environment.ts",
+                  "with": "catalogo-leite/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "catalogo-leite:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "catalogo-leite:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "catalogo-leite:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "catalogo-leite/src/test.ts",
+            "polyfills": "catalogo-leite/src/polyfills.ts",
+            "tsConfig": "catalogo-leite/tsconfig.spec.json",
+            "karmaConfig": "catalogo-leite/karma.conf.js",
+            "assets": [
+              "catalogo-leite/src/favicon.ico",
+              "catalogo-leite/src/assets"
+            ],
+            "styles": [
+              "catalogo-leite/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "catalogo-leite/tsconfig.app.json",
+              "catalogo-leite/tsconfig.spec.json",
+              "catalogo-leite/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "catalogo-leite/e2e/protractor.conf.js",
+            "devServerTarget": "catalogo-leite:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "catalogo-leite:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "catalogo-leite"
 }
