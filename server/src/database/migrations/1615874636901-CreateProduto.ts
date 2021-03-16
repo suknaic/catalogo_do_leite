@@ -4,13 +4,14 @@ export class CreateProduto1615874636901 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'produto',
+        name: 'produtos',
         columns: [
           {
             name: 'id',
             type: 'integer',
             isPrimary: true,
             generationStrategy: 'increment',
+            isGenerated: true,
           },
           {
             name: 'codigo',
