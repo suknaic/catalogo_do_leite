@@ -12,7 +12,7 @@ produtoRouter.post('/produto', (request, response) => {
   return response.status(200).json({ message: 'cadastrar produto' });
 });
 
-produtoRouter.delete('/deletar/:id', (request, response) => {
+produtoRouter.delete('/produto/:id', (request, response) => {
   return response.status(200).json({ message: 'deleta produto' });
 });
 
