@@ -7,6 +7,7 @@
     "catalogo-leite"
   ],
   "scripts": {
-    "dev:front": "yarn workspace catalogo-leite start"
+    "dev:web": "yarn workspace catalogo-leite start",
+    "dev:server": "yarn workspace server ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts "
   }
 }
