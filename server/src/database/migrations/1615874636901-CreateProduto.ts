@@ -16,6 +16,7 @@ export class CreateProduto1615874636901 implements MigrationInterface {
           {
             name: 'codigo',
             type: 'varchar',
+            isUnique: true,
             isNullable: false,
           },
           {
@@ -29,6 +30,6 @@ export class CreateProduto1615874636901 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('produto');
+    await queryRunner.dropTable('produtos');
   }
 }
