@@ -9,6 +9,8 @@ const produtoRouter = Router();
 produtoRouter.get('/produtos', async (request, response) => {
   const { pesquisa } = request.query;
 
+  console.log(request.query);
+
   const parsedValue = pesquisa.toString().toUpperCase();
 
   const PesquisarProdutoService = new PesquisarProduto();
