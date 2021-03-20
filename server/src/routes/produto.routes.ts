@@ -22,9 +22,14 @@ produtoRouter.get('/produtos', async (request, response) => {
 produtoRouter.post('/produto', async (request, response) => {
   const { codigo, nome } = request.body;
 
+  const NameUpperCase = String(nome).toLocaleUpperCase();
+
   const cadastrarProdutoService = new CadastrarProduto();
 
-  const novoProduto = await cadastrarProdutoService.execulte({ codigo, nome });
+  const novoProduto = await cadastrarProdutoService.execulte({
+    codigo,
+    nome: NameUpperCase,
+  });
 
   return response.status(201).json(novoProduto);
 });
