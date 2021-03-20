@@ -8,9 +8,13 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) {}
 
-  public getProdutos(value: string, page: number): Promise<any> {
+  public getProdutos(value?: string, page?: number): Promise<any> {
     return this.http
-      .get(`http://localhost:3333/produtos?page=${page}&pesquisa=${value}`)
+      .get(`${this.url}/produtos?page=${page}&pesquisa=${value}`)
       .toPromise();
+  }
+
+  public cadastrar(produto: Produto): Promise<Produto> {
+    return this.http.post<Produto>(`${this.url}/produto`, produto).toPromise();
   }
 }
