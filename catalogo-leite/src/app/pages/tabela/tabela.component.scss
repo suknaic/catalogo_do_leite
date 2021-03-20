@@ -1,0 +1,21 @@
+.pesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18vh 0 4vh 0;
+}
+
+.loading {
+  margin-top: 8vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound {
+  margin-top: 8vh;
+  justify-content: center;
+  align-items: center;
+}
+ngb-pagination pagination {
+  display: none;
+}

@@ -1,0 +1,18 @@
+<form class="form " [formGroup]="CadastroForm" (ngSubmit)="onSubmit()">
+
+  <span>Código</span>
+  <div class="wrap">
+    <input class="input" autocomplete="none"  type="text" formControlName="codigo" >
+  </div>
+
+  <span>Nome</span>
+  <div class="wrap">
+    <input class="input" autocomplete="none" type="text" formControlName="nome" >
+  </div>
+
+  <div class=" container">
+    <button type="submit" class="form-btn">
+      Cadastrar
+    </button>
+  </div>
+</form>

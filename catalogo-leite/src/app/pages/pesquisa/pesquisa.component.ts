@@ -12,18 +12,16 @@ export class PesquisaComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleInputValue(event: Event): void {
-    const { value = '' } = event.target as HTMLInputElement;
-    this.busca = value;
-  }
-
-  public async getProdutos(): Promise<void> {
+  async handleInputValue(value: string): Promise<void> {
     try {
+      this.busca = value;
       await this.route.navigate(['resultado'], {
-        queryParams: { page: 1, busca: this.busca },
+        state: { page: 1, busca: this.busca },
       });
     } catch (error) {
       console.error(error);
     }
   }
+
+  public async getProdutos(): Promise<void> {}
 }
