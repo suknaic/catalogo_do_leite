@@ -1,11 +1,11 @@
 # Avaliação prática - Fullstack Web Varejo 360
 
-![](https://media.giphy.com/media/asaSeYaoNa5cm1ZVZ7/giphy.gif)
+![](https://media.giphy.com/media/Dh9iAb6GkmJ3Xdiegx/giphy.gif)
 
 Este projeto foi gerado com:
-[yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
-[Angular](https://angular.io/).
-[Express](https://expressjs.com/pt-br/).
+[yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) - 
+[Angular](https://angular.io/) - 
+[Express](https://expressjs.com/pt-br/) - 
 
 ## Servidor de desenvolvimento API
 
