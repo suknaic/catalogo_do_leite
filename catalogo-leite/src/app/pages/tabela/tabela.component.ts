@@ -1,3 +1,4 @@
+import { identifierModuleUrl } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProdutoService } from 'src/app/shared/services/Produto.service';
@@ -17,6 +18,9 @@ export class TabelaComponent implements OnInit {
   public produtoComPaginacao: any;
   public busca = '';
 
+  public key = 'nome';
+  public reverse = false;
+
   constructor(private produtoService: ProdutoService, private router: Router) {
     const state = this.router.getCurrentNavigation()?.extras.state as {
       busca: string;
@@ -31,8 +35,14 @@ export class TabelaComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  public handleSort(key: string): void {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
   async handleInputValue(value: string): Promise<void> {
     await this.handleData({ busca: value, page: 1 });
+    console.log(this.produtoComPaginacao);
   }
 
   public async handlepage(page: number): Promise<void> {
@@ -46,5 +56,10 @@ export class TabelaComponent implements OnInit {
       busca,
       page,
     );
+  }
+
+  public async handleDelete(id: number): Promise<void> {
+    await this.produtoService.deletar(id);
+    await this.handleData({ busca: this.busca });
   }
 }

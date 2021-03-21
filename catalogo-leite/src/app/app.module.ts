@@ -6,6 +6,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 // rotiamento do angular
 import { AppRoutingModule } from './app-routing.module';
 
+// modulu de ordenacao
+import { OrderModule } from 'ngx-order-pipe';
+
 // componentes e paginas
 import { AppComponent } from './app.component';
 import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
@@ -15,6 +18,7 @@ import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.
 
 // angular bootstrap
 import { NgbPagination, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertComponent } from './components/alert/alert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +26,7 @@ import { NgbPagination, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TabelaComponent,
     PesquisaInputComponent,
     FormCadastroComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import { NgbPagination, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    OrderModule
   ],
   providers: [NgbPagination],
   bootstrap: [AppComponent],

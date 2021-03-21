@@ -10,21 +10,27 @@
     <div *ngIf="produtoComPaginacao.total > 0 ; else cadastrar">
       <table class="table table-hover" >
         <thead>
-        <tr>
-          <th scope="col">Código</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Opções</th>
+        <tr class="border">
+
+          <th (click)="handleSort('codigo')" class="border" >
+            Código
+            <span *ngIf="key =='codigo'">{{reverse ? '▲' : '▼'}}</span>
+          </th>
+          <th (click)="handleSort('nome')"  class="border">
+            Nome
+            <span *ngIf="key =='nome'">{{reverse ? '▲' : '▼'}}</span>
+          </th>
+          <th  class="border">Opções</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let produto of produtoComPaginacao.data">
+        <tr *ngFor="let produto of (produtoComPaginacao.data | orderBy: key : reverse); let i = index">
           <td>{{ produto.codigo }}</td>
           <td>{{ produto.nome }}</td>
-          <td scope="col">
+          <td >
 
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <button type="button" class="btn btn-danger">excluir</button>
-              <button type="button" class="btn btn-success">editar</button>
+              <button (click)="handleDelete(produto.id)" type="button" class="btn btn-danger">excluir</button>
             </div>
 
           </td>
@@ -46,9 +52,20 @@
         <ng-template ngbPaginationNumber let-page >{{ page }}</ng-template>
         </ngb-pagination>
       </div>
+
+      <div class="container">
+        <h1 class="display-6 mt-4">Cadastrar Novo </h1>
+        <app-form-cadastro (value)="handleInputValue($event)"></app-form-cadastro>
+      </div>
+
     </div>
 
+
+
+
+
   </div>
+
 
   <ng-template #loading >
     <div class="d-flex justify-content-center loading" >

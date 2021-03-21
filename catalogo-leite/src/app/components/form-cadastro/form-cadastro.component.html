@@ -1,3 +1,10 @@
+<div *ngIf="Alert.type ">
+  <div class="alert alert-{{Alert.type}} alert-dismissible fade show" role="alert">
+    {{Alert.message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
 <form class="form " [formGroup]="CadastroForm" (ngSubmit)="onSubmit()">
 
   <span>Código</span>

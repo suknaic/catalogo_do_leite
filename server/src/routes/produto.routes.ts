@@ -20,18 +20,22 @@ produtoRouter.get('/produtos', async (request, response) => {
 });
 
 produtoRouter.post('/produto', async (request, response) => {
-  const { codigo, nome } = request.body;
+  try {
+    const { codigo, nome } = request.body;
 
-  const NameUpperCase = String(nome).toLocaleUpperCase();
+    const NameUpperCase = String(nome).toLocaleUpperCase();
 
-  const cadastrarProdutoService = new CadastrarProduto();
+    const cadastrarProdutoService = new CadastrarProduto();
 
-  const novoProduto = await cadastrarProdutoService.execulte({
-    codigo,
-    nome: NameUpperCase,
-  });
+    const novoProduto = await cadastrarProdutoService.execulte({
+      codigo,
+      nome: NameUpperCase,
+    });
 
-  return response.status(201).json(novoProduto);
+    return response.status(201).json(novoProduto);
+  } catch (error) {
+    return response.status(400).json({ message: 'Produto Já Cadastrado' });
+  }
 });
 
 produtoRouter.delete('/produto/:id', async (request, response) => {
