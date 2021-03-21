@@ -1,27 +1,23 @@
-# Varejo360
+# Avaliação prática - Fullstack Web Varejo 360
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+Este projeto foi gerado com [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
 
-## Development server
+## Servidor de desenvolvimento API
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute `yarn dev:serve` para um servidor de desenvolvimento. na porta`http://localhost:3333/`. O servidor será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Code scaffolding
+## Build da API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `yarn workspace server build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`. Use o sinalizador `--prod` para uma construção de produção.
 
-## Build
+## DOCKER DA API
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+no diretório `server/`. encontrase o arquivo dockerfile Execulte `docker build -t [NOME_DO_CONTAINER] .`
 
-## Running unit tests
+## Servidor de desenvolvimento Web
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `yarn dev:web` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Running end-to-end tests
+## Build do Aplicativo Web
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute `yarn workspace catalogo-leite build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`. Use o sinalizador `--prod` para uma construção de produção.
