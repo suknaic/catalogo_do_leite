@@ -45,6 +45,10 @@
         [pageSize]="produtoComPaginacao.per_page"
         (pageChange)="handlepage(produtoComPaginacao.current_page)"
         [directionLinks]="produtoComPaginacao.total > produtoComPaginacao.per_page"
+        [boundaryLinks]="true"
+        [ellipses]="true"
+        [rotate]="true"
+        [maxSize]="produtoComPaginacao.per_page"
         >
 
         <ng-template ngbPaginationPrevious>Anterior</ng-template>
