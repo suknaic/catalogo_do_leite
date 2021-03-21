@@ -1,0 +1,25 @@
+#seleciona a imagem que será usada
+FROM node:12-alpine
+
+# cria a pasta raiz do servidor
+WORKDIR /api
+
+# copia as configurações para a pasta app/
+COPY package*.json ./
+COPY tsconfig.json ./
+COPY ../ormconfig.json ./
+
+# copia o codigo da pasta dist/ para /api/src
+COPY dist /api/src
+
+# verifica a lista de arquivos
+RUN ls -a
+
+# instala as dependencias
+RUN npm install
+
+# compartilha a porta do container
+EXPOSE 3333
+
+# execulta a api no container
+CMD [ "node", "./src/server.js" ]

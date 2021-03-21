@@ -1,0 +1,11 @@
+{
+  "type": "postgres",
+  "host": "34.68.54.165",
+  "port": "5432",
+  "username": "postgres",
+  "password": "pDfMHI7azOtJ6mzf",
+  "database": "catalogo_leite",
+  "entities": [
+    "src/database/model/**/*{.ts,.js}"
+  ]
+}

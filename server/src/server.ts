@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express from 'express';
-import cors from 'cors';
 import './database';
+import cors from 'cors';
 import { pagination } from 'typeorm-pagination';
 
 import routes from './routes';
