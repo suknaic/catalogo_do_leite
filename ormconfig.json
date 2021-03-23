@@ -6,6 +6,12 @@
   "password": "pDfMHI7azOtJ6mzf",
   "database": "catalogo_leite",
   "entities": [
-    "src/database/model/**/*{.ts,.js}"
-  ]
+    "./src/modules/produtos/infra/typeorm/entities/*{.ts,.js}"
+  ],
+  "migrations": [
+    "./src/shared/infra/typeorm/migrations/*{.ts,.js}"
+  ],
+  "cli": {
+    "migrationsDir": "./src/shared/infra/typeorm/migrations/"
+  }
 }

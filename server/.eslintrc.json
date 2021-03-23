@@ -22,7 +22,7 @@
       "import"
   ],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": ["error"],
     "class-methods-use-this": "off",
     "no-useless-constructor": "off",
     "no-empty-function": "off",
