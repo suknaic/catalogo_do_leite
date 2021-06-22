@@ -1,4 +1,4 @@
-# Avaliação prática - Fullstack Web Varejo 360
+# test Catálogo de Leite - FullStack com angular
 
 ![](https://media.giphy.com/media/Dh9iAb6GkmJ3Xdiegx/giphy.gif)
 
